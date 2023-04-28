@@ -99,7 +99,8 @@ def treat_arguments(software_acronym: str, software_name: str, software_version:
         arguments.verbose = False
 
     # Asserting dictionary keys
-    global_configurations = {
+    global ARGUMENTS
+    ARGUMENTS = {
         "is_automatic": arguments.automatic,
         "is_interactive": arguments.interactive,
 
@@ -117,9 +118,5 @@ def treat_arguments(software_acronym: str, software_name: str, software_version:
 
         "ontology_path": arguments.ontology_file
     }
-
-    # Making ARGUMENTS a global variable
-    global ARGUMENTS
-    ARGUMENTS = global_configurations
-
-    LOGGER.debug(f"Arguments parsed. Obtained values are: {global_configurations}.")
+    
+    LOGGER.debug(f"Arguments parsed. Obtained values are: {ARGUMENTS}.")
